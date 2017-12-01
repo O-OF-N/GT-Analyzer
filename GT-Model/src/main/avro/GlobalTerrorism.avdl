@@ -1,0 +1,61 @@
+@namespace("org.gtd")
+protocol GlobalTerrorism{
+
+  record Location{
+    union {null,string} region= null;
+    string country;
+    string state;
+    string city;
+    string lattitude;
+    string longitude;
+  }
+
+  record Time {
+    string year;
+    string month;
+    string dt;
+  }
+
+  record Attack {
+    boolean suicide;
+    string type;
+    union {null,string} motive= null;
+    union {null,string} weapon= null;
+  }
+
+  record Target {
+    string type;
+    string subType;
+    union {null,string} corp= null;
+    union {null,string} target1= null;
+    union {null,string} nationality1= null;
+    union {null,string} target2= null;
+    union {null,string} nationality2= null;
+    union {null,string} target3= null;
+    union {null,string} nationality3= null;
+  }
+
+  record AttackDetails {
+    Location location;
+    Time time;
+    Attack attack;
+    Target target;
+  }
+
+  record YearCountryKey {
+    string year;
+    string country;
+  }
+
+  record AttacksPerCountry {
+    string country;
+    int count;
+    array<AttackDetails> attackDetails;
+  }
+
+  record AttacksPerCountryPerYear {
+    string year;
+    array<AttacksPerCountry> attackByCountry;
+  }
+
+}

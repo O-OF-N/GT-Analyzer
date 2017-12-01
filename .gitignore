@@ -1,0 +1,16 @@
+*/target/**
+*.csv
+*.iml
+.project
+.cache*
+.tmp*
+.classpath
+.settings
+bin/
+.DS_Store
+*.orig
+.metadata/
+*.sc
+.worksheet/
+.workspace/
+.idea/
