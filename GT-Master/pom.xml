@@ -16,15 +16,11 @@
     <dependencies>
         <dependency>
             <groupId>org.gtd</groupId>
-            <artifactId>GT-Extract</artifactId>
+            <artifactId>GT-Setup</artifactId>
         </dependency>
         <dependency>
             <groupId>org.gtd</groupId>
             <artifactId>GT-Transform</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.gtd</groupId>
-            <artifactId>GT-Load</artifactId>
         </dependency>
         <dependency>
             <groupId>org.gtd</groupId>
@@ -42,18 +38,7 @@
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-common</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.hbase</groupId>
-            <artifactId>hbase-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hbase</groupId>
-            <artifactId>hbase-server</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hbase</groupId>
-            <artifactId>hbase-common</artifactId>
-        </dependency>
+
 
     </dependencies>
     <build>

@@ -10,6 +10,7 @@ import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 import org.gtd.extract.Extract;
+import org.gtd.hdfs.HDFSSetup;
 import org.gtd.load.Load;
 import org.gtd.transform.Transform;
 
@@ -32,9 +33,13 @@ public class Main extends Configured implements Tool, Serializable {
     public int run(String[] args) throws Exception {
         Configuration configuration = getConf();
         configuration.set("mapreduce.framework.name", "local");
-        Setup.setup();
-        Extract.extract(getPipeLine(configuration));
+        configuration.set("hbase.client.keyvalue.maxsize", "-1");
+        HDFSSetup.setup();
+        System.out.println("Extract begins");
+        Extract.newInstance().extract(getPipeLine(configuration));
+        System.out.println("transform begins");
         PCollection<AttacksPerCountryPerYear> attacksPerCountryPerYearPCollection = Transform.transform(getPipeLine(configuration));
+        System.out.println("load begins");
         Load.load(attacksPerCountryPerYearPCollection);
         return 0;
     }

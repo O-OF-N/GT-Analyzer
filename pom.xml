@@ -10,10 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>GT-Master</module>
+        <module>GT-Setup</module>
         <module>GT-Model</module>
-        <module>GT-Extract</module>
         <module>GT-Transform</module>
-        <module>GT-Load</module>
     </modules>
     <properties>
         <avro.version>1.7.3</avro.version>
@@ -24,6 +23,12 @@
         <hbase.version>1.2.6</hbase.version>
         <commons.io>2.6</commons.io>
         <commons.codec>1.11</commons.codec>
+        <mockito.core>2.13.0</mockito.core>
+        <jackson.dataformat>2.3.0</jackson.dataformat>
+        <jackson.databind>2.2.3</jackson.databind>
+        <commons.lang3>3.4</commons.lang3>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -34,17 +39,12 @@
             </dependency>
             <dependency>
                 <groupId>org.gtd</groupId>
-                <artifactId>GT-Extract</artifactId>
+                <artifactId>GT-Setup</artifactId>
                 <version>${org.gtd.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.gtd</groupId>
                 <artifactId>GT-Transform</artifactId>
-                <version>${org.gtd.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.gtd</groupId>
-                <artifactId>GT-Load</artifactId>
                 <version>${org.gtd.version}</version>
             </dependency>
             <dependency>
@@ -91,6 +91,27 @@
                 <groupId>commons-codec</groupId>
                 <artifactId>commons-codec</artifactId>
                 <version>${commons.codec}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.core}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-yaml</artifactId>
+                <version>${jackson.dataformat}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.databind}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons.lang3}</version>
             </dependency>
 
         </dependencies>
