@@ -50,7 +50,6 @@ protocol GlobalTerrorism{
   record AttacksPerCountry {
     string country;
     int count;
-    array<AttackDetails> attackDetails;
   }
 
   record AttacksPerCountryPerYear {

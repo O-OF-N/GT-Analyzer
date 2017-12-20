@@ -30,12 +30,12 @@ public class ResultFn extends MapFn<Pair<String, Iterable<Pair<String, AttackDet
             String country = attackDetails.getLocation().getCountry().toString();
 
             if (!attackDetailsMap.containsKey(country))
-                attackDetailsMap.put(country, new ArrayList<AttackDetails>());
+                attackDetailsMap.put(country, new ArrayList<>());
             attackDetailsMap.get(country).add(attackDetails);
         }
         for (Map.Entry<String, List<AttackDetails>> entry : attackDetailsMap.entrySet()) {
             AttacksPerCountry a = AttacksPerCountry.newBuilder().setCountry(entry.getKey())
-                    .setCount(entry.getValue().size()).setAttackDetails(entry.getValue()).build();
+                    .setCount(entry.getValue().size()).build();
             attacksPerCountry.add(a);
         }
         attacksPerCountryPerYear.setAttackByCountry(attacksPerCountry);

@@ -7,10 +7,9 @@ package org.gtd;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class AttacksPerCountry extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AttacksPerCountry\",\"namespace\":\"org.gtd\",\"fields\":[{\"name\":\"country\",\"type\":\"string\"},{\"name\":\"count\",\"type\":\"int\"},{\"name\":\"attackDetails\",\"type\":{\"type\":\"array\",\"items\":{\"type\":\"record\",\"name\":\"AttackDetails\",\"fields\":[{\"name\":\"location\",\"type\":{\"type\":\"record\",\"name\":\"Location\",\"fields\":[{\"name\":\"region\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"country\",\"type\":\"string\"},{\"name\":\"state\",\"type\":\"string\"},{\"name\":\"city\",\"type\":\"string\"},{\"name\":\"lattitude\",\"type\":\"string\"},{\"name\":\"longitude\",\"type\":\"string\"}]}},{\"name\":\"time\",\"type\":{\"type\":\"record\",\"name\":\"Time\",\"fields\":[{\"name\":\"year\",\"type\":\"string\"},{\"name\":\"month\",\"type\":\"string\"},{\"name\":\"dt\",\"type\":\"string\"}]}},{\"name\":\"attack\",\"type\":{\"type\":\"record\",\"name\":\"Attack\",\"fields\":[{\"name\":\"suicide\",\"type\":\"boolean\"},{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"motive\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"weapon\",\"type\":[\"null\",\"string\"],\"default\":null}]}},{\"name\":\"target\",\"type\":{\"type\":\"record\",\"name\":\"Target\",\"fields\":[{\"name\":\"type\",\"type\":\"string\"},{\"name\":\"subType\",\"type\":\"string\"},{\"name\":\"corp\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"target1\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"nationality1\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"target2\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"nationality2\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"target3\",\"type\":[\"null\",\"string\"],\"default\":null},{\"name\":\"nationality3\",\"type\":[\"null\",\"string\"],\"default\":null}]}}]}}}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"AttacksPerCountry\",\"namespace\":\"org.gtd\",\"fields\":[{\"name\":\"country\",\"type\":\"string\"},{\"name\":\"count\",\"type\":\"int\"}]}");
   @Deprecated public java.lang.CharSequence country;
   @Deprecated public int count;
-  @Deprecated public java.util.List<org.gtd.AttackDetails> attackDetails;
 
   /**
    * Default constructor.
@@ -20,10 +19,9 @@ public class AttacksPerCountry extends org.apache.avro.specific.SpecificRecordBa
   /**
    * All-args constructor.
    */
-  public AttacksPerCountry(java.lang.CharSequence country, java.lang.Integer count, java.util.List<org.gtd.AttackDetails> attackDetails) {
+  public AttacksPerCountry(java.lang.CharSequence country, java.lang.Integer count) {
     this.country = country;
     this.count = count;
-    this.attackDetails = attackDetails;
   }
 
   public org.apache.avro.Schema getSchema() { return SCHEMA$; }
@@ -32,7 +30,6 @@ public class AttacksPerCountry extends org.apache.avro.specific.SpecificRecordBa
     switch (field$) {
     case 0: return country;
     case 1: return count;
-    case 2: return attackDetails;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -42,7 +39,6 @@ public class AttacksPerCountry extends org.apache.avro.specific.SpecificRecordBa
     switch (field$) {
     case 0: country = (java.lang.CharSequence)value$; break;
     case 1: count = (java.lang.Integer)value$; break;
-    case 2: attackDetails = (java.util.List<org.gtd.AttackDetails>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -77,21 +73,6 @@ public class AttacksPerCountry extends org.apache.avro.specific.SpecificRecordBa
     this.count = value;
   }
 
-  /**
-   * Gets the value of the 'attackDetails' field.
-   */
-  public java.util.List<org.gtd.AttackDetails> getAttackDetails() {
-    return attackDetails;
-  }
-
-  /**
-   * Sets the value of the 'attackDetails' field.
-   * @param value the value to set.
-   */
-  public void setAttackDetails(java.util.List<org.gtd.AttackDetails> value) {
-    this.attackDetails = value;
-  }
-
   /** Creates a new AttacksPerCountry RecordBuilder */
   public static org.gtd.AttacksPerCountry.Builder newBuilder() {
     return new org.gtd.AttacksPerCountry.Builder();
@@ -115,7 +96,6 @@ public class AttacksPerCountry extends org.apache.avro.specific.SpecificRecordBa
 
     private java.lang.CharSequence country;
     private int count;
-    private java.util.List<org.gtd.AttackDetails> attackDetails;
 
     /** Creates a new Builder */
     private Builder() {
@@ -137,10 +117,6 @@ public class AttacksPerCountry extends org.apache.avro.specific.SpecificRecordBa
       if (isValidValue(fields()[1], other.count)) {
         this.count = data().deepCopy(fields()[1].schema(), other.count);
         fieldSetFlags()[1] = true;
-      }
-      if (isValidValue(fields()[2], other.attackDetails)) {
-        this.attackDetails = data().deepCopy(fields()[2].schema(), other.attackDetails);
-        fieldSetFlags()[2] = true;
       }
     }
 
@@ -193,38 +169,12 @@ public class AttacksPerCountry extends org.apache.avro.specific.SpecificRecordBa
       return this;
     }
 
-    /** Gets the value of the 'attackDetails' field */
-    public java.util.List<org.gtd.AttackDetails> getAttackDetails() {
-      return attackDetails;
-    }
-    
-    /** Sets the value of the 'attackDetails' field */
-    public org.gtd.AttacksPerCountry.Builder setAttackDetails(java.util.List<org.gtd.AttackDetails> value) {
-      validate(fields()[2], value);
-      this.attackDetails = value;
-      fieldSetFlags()[2] = true;
-      return this; 
-    }
-    
-    /** Checks whether the 'attackDetails' field has been set */
-    public boolean hasAttackDetails() {
-      return fieldSetFlags()[2];
-    }
-    
-    /** Clears the value of the 'attackDetails' field */
-    public org.gtd.AttacksPerCountry.Builder clearAttackDetails() {
-      attackDetails = null;
-      fieldSetFlags()[2] = false;
-      return this;
-    }
-
     @Override
     public AttacksPerCountry build() {
       try {
         AttacksPerCountry record = new AttacksPerCountry();
         record.country = fieldSetFlags()[0] ? this.country : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.count = fieldSetFlags()[1] ? this.count : (java.lang.Integer) defaultValue(fields()[1]);
-        record.attackDetails = fieldSetFlags()[2] ? this.attackDetails : (java.util.List<org.gtd.AttackDetails>) defaultValue(fields()[2]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);
