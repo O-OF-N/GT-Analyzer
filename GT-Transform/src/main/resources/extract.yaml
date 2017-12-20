@@ -1,0 +1,29 @@
+tableConfig:
+  table: GTD
+  column: RAW
+  location: Location
+  target: Target
+  time: Time
+  attack: Attack
+extractConfig:
+  split: ","
+  city: 12
+  country: 8
+  region: 10
+  state: 11
+  latitude: 13
+  longitude: 14
+  year: 1
+  month: 2
+  date: 3
+  id: 0
+  type: 35
+  subtype: 37
+  corp: 38
+  target1: 39
+  nationality1: 40
+  target2: 12
+  nationality2: 12
+  target3: 12
+  nationality3: 12
+  suicide: 27

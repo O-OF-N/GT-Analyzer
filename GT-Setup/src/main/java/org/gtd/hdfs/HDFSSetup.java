@@ -1,4 +1,4 @@
-package org.gtd;
+package org.gtd.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
@@ -12,9 +12,10 @@ import org.apache.hadoop.hbase.client.HBaseAdmin;
 /**
  * Created by vm033450 on 11/21/17.
  */
-public class Setup {
+public class HDFSSetup
+    {
 
-    static void setup() {
+    public static void setup() {
         try {
             final String sourceTable = "GTD";
             final String resultTable = "GTD-ATTACKS-PER-YEAR-PER-COUNTRY";

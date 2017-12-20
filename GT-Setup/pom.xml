@@ -9,25 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>GT-Extract</artifactId>
-
+    <artifactId>GT-Setup</artifactId>
     <dependencies>
-        <dependency>
-            <groupId>org.gtd</groupId>
-            <artifactId>GT-Model</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.crunch</groupId>
-            <artifactId>crunch-core</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.crunch</groupId>
-            <artifactId>crunch-hbase</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase-client</artifactId>
@@ -40,7 +23,6 @@
             <groupId>org.apache.hbase</groupId>
             <artifactId>hbase-common</artifactId>
         </dependency>
-
     </dependencies>
 
 </project>
