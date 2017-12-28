@@ -6,7 +6,7 @@ tableConfig:
   time: Time
   attack: Attack
 extractConfig:
-  split: ","
+  split: ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"
   city: 12
   country: 8
   region: 10

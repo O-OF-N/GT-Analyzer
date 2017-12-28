@@ -8,10 +8,9 @@ import org.gtd.*;
 
 public class ResultFn extends MapFn<Pair<String, Iterable<Pair<String, AttackDetails>>>, AttacksPerCountryPerYear> {
 
-    private final Map<String, List<AttackDetails>> attackDetailsMap = new LinkedHashMap<String, List<AttackDetails>>();
-    private final List<AttacksPerCountry> attacksPerCountry = new ArrayList<AttacksPerCountry>();
-
     public AttacksPerCountryPerYear map(Pair<String, Iterable<Pair<String, AttackDetails>>> y) {
+        final Map<String, List<AttackDetails>> attackDetailsMap = new LinkedHashMap<String, List<AttackDetails>>();
+        final List<AttacksPerCountry> attacksPerCountry = new ArrayList<AttacksPerCountry>();
         AttacksPerCountryPerYear.Builder attacksPerCountryPerYear = AttacksPerCountryPerYear
                 .newBuilder().setYear(y.first().toString());
 

@@ -19,7 +19,7 @@ public class LoadFn extends MapFn<AttacksPerCountryPerYear, Put> {
             return put;
         } catch (Exception ex){
             ex.printStackTrace();
+            return null;
         }
-        return null;
     }
 }

@@ -31,7 +31,7 @@ class ExtractFn extends MapFn<String, Put> {
     }
 
     public Put map(String attackDetails) {
-        String[] attack = attackDetails.split(extractConfig.getSplit());
+        String[] attack = attackDetails.split(extractConfig.getSplit(),-1);
         Location location = Location.newBuilder()
                 .setCity(attack[toInt(extractConfig.getCity())])
                 .setCountry(attack[toInt(extractConfig.getCountry())])
@@ -74,7 +74,7 @@ class ExtractFn extends MapFn<String, Put> {
             return put;
         } catch (Exception ex) {
             ex.printStackTrace();
+            return null;
         }
-        return null;
     }
 }

@@ -20,7 +20,8 @@ public class AttacksPerYearByCountryTransform {
         PTable<String, Pair<String, AttackDetails>> grouped = input.parallelDo(new GroupFn(config),
                 Avros.tableOf(Avros.strings(), Avros.pairs(Avros.strings(), Avros.records(AttackDetails.class))));
         PCollection<AttacksPerCountryPerYear> transformed =
-                SecondarySort.sortAndApply(grouped, new ResultFn(), Avros.records(AttacksPerCountryPerYear.class), 10);
+                SecondarySort.sortAndApply(grouped, new ResultFn(), Avros
+                        .records(AttacksPerCountryPerYear.class),10);
         return transformed;
     }
 

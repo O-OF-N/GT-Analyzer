@@ -48,7 +48,7 @@ public class GroupFn extends MapFn<Pair<ImmutableBytesWritable, Result>, Pair<St
             return Pair.of(t.getYear().toString(), Pair.of(l.getCountry().toString(), attackDetails));
         } catch (Exception ex) {
             ex.printStackTrace();
+            return null;
         }
-        return null;
     }
 }

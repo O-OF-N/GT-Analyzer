@@ -24,7 +24,7 @@ public class Load {
     }
 
     private static void writeToHdfs(PCollection<AttacksPerCountryPerYear> attacksPerCountryPerYearPCollection) {
-        attacksPerCountryPerYearPCollection.write(To.textFile("/output"));
+        attacksPerCountryPerYearPCollection.write(To.avroFile("/output"));
         attacksPerCountryPerYearPCollection.getPipeline().done();
     }
 }

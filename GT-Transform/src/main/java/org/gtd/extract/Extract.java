@@ -46,8 +46,6 @@ public class Extract {
     }
 
     ExtractFn getExtractFn(ExtractConfig extractConfig, TableConfig tableConfig) {
-        System.out.println("4" + extractConfig.getCity());
-        System.out.println("5" + tableConfig.getTable());
         return new ExtractFn(extractConfig, tableConfig);
     }
 
